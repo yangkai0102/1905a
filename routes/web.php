@@ -15,17 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', 'Admin\LoginController@login');
-Route::post('/login/loginDo', 'Admin\LoginController@loginDo');
+Route::get('admin/index', 'Admin\CsdController@index');
+Route::get('admin/csd/create', 'Admin\CsdController@create');
+Route::get('admin/csd/lists', 'Admin\CsdController@lists');
+Route::post('admin/csd/store', 'Admin\CsdController@store');
+Route::get('admin/csd/edit/{id}', 'Admin\CsdController@edit');
+Route::get('admin/csd/destroy/{id}', 'Admin\CsdController@destroy');
+Route::post('admin/csd/update/{id}', 'Admin\CsdController@update');
 
-Route::get('/admin/index','Admin\AdminController@index');
 
-Route::get('/admin/create','Admin\AdminController@create');
-Route::post('/admin/store','Admin\AdminController@store');
-Route::get('/admin/lists','Admin\AdminController@lists');
-
-Route::get('/goods/create','Admin\GoodsController@create');
-Route::post('/goods/store','Admin\GoodsController@store');
 
 
 
